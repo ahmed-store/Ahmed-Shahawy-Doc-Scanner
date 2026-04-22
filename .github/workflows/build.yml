@@ -1,1 +1,64 @@
+name: Build Ahmed Shahawy DocScanner APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Accept SDK licenses
+      run: yes | sdkmanager --licenses || true
+
+    - name: Download gradle-wrapper.jar
+      run: |
+        mkdir -p gradle/wrapper
+        curl -fsSL "https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradle/wrapper/gradle-wrapper.jar" \
+          -o gradle/wrapper/gradle-wrapper.jar
+        chmod +x gradlew
+
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug --stacktrace --no-daemon
+      env:
+        GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2g"
+
+    - name: Rename APK
+      run: |
+        cp app/build/outputs/apk/debug/app-debug.apk \
+           app/build/outputs/apk/debug/Ahmed-Shahawy-DocScanner.apk
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: Ahmed-Shahawy-DocScanner
+        path: app/build/outputs/apk/debug/Ahmed-Shahawy-DocScanner.apk
+        retention-days: 90
+
+    - name: Build Summary
+      run: |
+        APK="app/build/outputs/apk/debug/Ahmed-Shahawy-DocScanner.apk"
+        SIZE=$(du -sh "$APK" | cut -f1)
+        echo "## ✅ Build Successful" >> $GITHUB_STEP_SUMMARY
+        echo "| | |" >> $GITHUB_STEP_SUMMARY
+        echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+        echo "| **App** | Ahmed Shahawy Doc Scanner |" >> $GITHUB_STEP_SUMMARY
+        echo "| **Package** | com.ahmed_shahawy.app |" >> $GITHUB_STEP_SUMMARY
+        echo "| **Size** | $SIZE |" >> $GITHUB_STEP_SUMMARY
+        echo "| **File** | Ahmed-Shahawy-DocScanner.apk |" >> $GITHUB_STEP_SUMMARY
 
