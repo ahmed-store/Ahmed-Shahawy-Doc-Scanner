@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:title="Ahmed Shahawy Doc Scanner"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- شريط الأزرار: مسح الكل | عدد الصور | إنشاء PDF -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnClearAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="مسح الكل"
+                android:enabled="false"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            <TextView
+                android:id="@+id/tvImageCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="لا توجد صور"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <Button
+                android:id="@+id/btnCreatePdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="إنشاء PDF"
+                android:enabled="false"
+                style="@style/Widget.Material3.Button" />
+
+        </RelativeLayout>
+
+        <!-- حالة الفراغ مع صورة العلم -->
+        <FrameLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <!-- صورة العلم - نصف شفافة 80% من العرض -->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/egypt_flag"
+                android:alpha="0.45"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginHorizontal="10%"
+                android:layout_marginEnd="10%"
+                android:layout_marginStart="10%"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <!-- نصوص فوق الصورة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="لا توجد صور بعد"
+                    android:textSize="17sp"
+                    android:textColor="@color/text_secondary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="استخدم زر الماسح أو اختر من المعرض"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_hint"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- شبكة الصور -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewImages"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- أزرار FAB -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:gravity="end">
+
+        <!-- زر المعرض مع نص -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="معرض الصور"
+            app:icon="@android:drawable/ic_menu_gallery"
+            app:backgroundTint="@color/accent"
+            android:textColor="@color/white"
+            app:iconTint="@color/white" />
+
+        <!-- زر الماسح -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مسح مستند"
+            app:icon="@android:drawable/ic_menu_camera"
+            app:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
