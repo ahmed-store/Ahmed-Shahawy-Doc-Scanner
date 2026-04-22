@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- اسم التطبيق -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahmed Shahawy Doc Scanner"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- الإصدار -->
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الإصدار: 1.0"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="32dp" />
+
+            <!--
+                egypt_flag.png تم تحويلها لـ RGBA وإزالة الخلفية السوداء.
+                ImageView يعرض قناة الشفافية تلقائياً.
+                لا نضع background على ImageView حتى لا تظهر خلفية.
+            -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/egypt_flag"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="32dp" />
+
+            <!-- الاسم -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أحمد محمد شهاوي"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- السنة -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2026"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="40dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- زر مشاركة التطبيق - كامل العرض -->
+    <Button
+        android:id="@+id/btnShareApp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="مشاركة التطبيق"
+        android:textSize="16sp"
+        style="@style/Widget.Material3.Button"
+        app:backgroundTint="@color/primary" />
+
+</LinearLayout>
