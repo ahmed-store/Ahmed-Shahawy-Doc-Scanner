@@ -4,11 +4,11 @@
 
 ---
 <div align="center">
-  <img src="ScreenShots/screen-main.jpg" width="30%"/>
+  <img src="Screenshots/screen-main.jpg" width="30%"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="ScreenShots/screen-settings.jpg" width="30%"/>
+  <img src="Screenshots/screen-settings.jpg" width="30%"/>
   &nbsp;&nbsp;&nbsp;  
-  <img src="ScreenShots/screen-about.jpg" width="30%"/>
+  <img src="Screenshots/screen-about.jpg" width="30%"/>
 </div>
 ## ✨ الميزات
 
