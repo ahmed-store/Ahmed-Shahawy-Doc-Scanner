@@ -4,7 +4,8 @@
 
 <div align="center">
   <a href="https://ahmed-store.github.io/download-DocScanner.html">
-    <img src="Screenshots/DOWNLOAD.svg" alt="Download the App" height="50">
+    <p>للتحميل اضغط هنا</p>
+    <img src="Screenshots/DOWNLOAD.svg" alt="Download the App" height="80">
   </a>
 </div>
 
