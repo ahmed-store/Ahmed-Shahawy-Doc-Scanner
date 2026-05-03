@@ -4,7 +4,7 @@
 
 ---
 <img src="ScreenShots/1.jpg" width="30%" />
-<span>&nbsp;&nbsp;&nbsp;</span>
+
 <img src="ScreenShots/2.jpg" width="30%" />
 ## ✨ الميزات
 
