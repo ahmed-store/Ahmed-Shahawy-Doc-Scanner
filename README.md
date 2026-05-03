@@ -11,6 +11,7 @@
   <img src="Screenshots/screen-about.jpg" width="30%"/>
 </div>
 ---
+
 ## ✨ الميزات
 
 | الميزة | الوصف |
