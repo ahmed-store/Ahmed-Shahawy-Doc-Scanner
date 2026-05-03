@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/ahmed-store/Ahmed-Shahawy-Doc-Scanner/releases/download/Version_1.0/DocScanner.apk">
-    <kbd style="font-size: 24px; padding: 15px 30px; cursor: pointer;">
+    <kbd style="height:150px; font-size: 24px; padding: 15px 30px; cursor: pointer;">
       📥 اضغط هنا لتحميل التطبيق
     </kbd>
   </a>
