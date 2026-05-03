@@ -6,9 +6,9 @@
 
 <div align="center">
   <img src="Screenshots/screen-main.jpg" width="30%"/>
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="Screenshots/screen-settings.jpg" width="30%"/>
-  &nbsp;&nbsp;&nbsp;  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="Screenshots/screen-about.jpg" width="30%"/>
 </div>
 
