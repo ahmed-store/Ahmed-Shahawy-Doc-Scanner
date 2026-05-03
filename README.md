@@ -4,8 +4,9 @@
 
 ---
 <div align="center">
-  <img src="ScreenShots/1.jpg" style="width:45%; margin: 10px;"/>
-  <img src="ScreenShots/2.jpg" style="width:45%; margin: 10px;" />
+  <img src="ScreenShots/1.jpg" width="40%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="ScreenShots/2.jpg" width="40%" />
 </div>
 ## ✨ الميزات
 
