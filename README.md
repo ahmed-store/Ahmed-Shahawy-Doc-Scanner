@@ -3,9 +3,10 @@
 تطبيق Android مبني بـ **Kotlin** يتيح التقاط المستندات وتحويلها إلى PDF.
 
 ---
-<img src="ScreenShots/1.jpg" style="width:30%; display:inline; float:left" />
-
-<img src="ScreenShots/2.jpg" style="width:30%; display:inline; float:left" />
+<div align="center">
+  <img src="ScreenShots/1.jpg" style="width:30%;"/>
+  <img src="ScreenShots/2.jpg" style="width:30%;" />
+</div>
 ## ✨ الميزات
 
 | الميزة | الوصف |
