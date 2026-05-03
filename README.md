@@ -3,7 +3,7 @@
 تطبيق Android مبني بـ **Kotlin** يتيح التقاط المستندات وتحويلها إلى PDF.
 
 <div align="center">
-  <a href="https://ahmed-store.github.io/download-DocScanner.html" target="_blank">
+  <a href="https://ahmed-store.github.io/download-DocScanner.html">
     <p>للتحميل اضغط هنا</p>
     <img src="Screenshots/DOWNLOAD.svg" alt="Download the App" height="80">
   </a>
